@@ -1,0 +1,176 @@
+@use '~/styles/_variables.scss' as variables;
+
+.order_history_container {
+  height: calc(100% - 130px);
+}
+
+.order_options {
+  @include variables.flex(flex-start);
+  align-items: center;
+
+  &_item {
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 10px 0px;
+    margin-right: 20px;
+    background-color: variables.$primary-white-color;
+    box-shadow: 0px 2px 16px rgba(34, 22, 22, 0.08);
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &_highlighted {
+      @extend .order_options_item;
+      border: 2px solid variables.$primary-orange-color;
+    }
+  }
+  &_item:hover {
+    background-color: var(--primary-hover-color) !important;
+  }
+}
+
+.orderhistory_list {
+  box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+  background-color: variables.$primary-white-color;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  height: calc(100% - 65px);
+  padding-bottom: 50px;
+
+  .order_search {
+    // display: flex;
+    position: relative;
+    input {
+      border: none;
+      width: 100%;
+      background-color: var(--bg-gray-dark);
+      padding-top: 12px;
+      border-bottom: 1px solid var(--border-gray-light);
+      padding-left: 34px;
+      outline: none;
+      padding-bottom: 9px;
+    }
+    input::placeholder {
+      font-weight: bold;
+    }
+    input:hover {
+      border-bottom: 1px solid var(--primary-color);
+    }
+    .searchicon {
+      position: absolute;
+      left: -2px;
+      font-size: 20px;
+      color: var(--gray-600);
+      top: 8px;
+    }
+  }
+  .orderList {
+    display: flex;
+    flex-direction: column;
+    height: 96%;
+
+    .orderHead {
+      font-size: 14px;
+      overflow: auto;
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+      }
+      ul {
+        padding: 0px;
+        text-align: justify;
+      }
+      ul li {
+        list-style: none;
+
+        .head {
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          position: sticky;
+        }
+
+        cursor: pointer;
+        .listItem {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0px;
+          border-radius: 8px;
+          padding: 10px 20px;
+          border: 1px solid variables.$primary-white-color;
+
+          div {
+            width: max-content;
+            padding: 5px 4px;
+            position: relative;
+            right: 13px;
+            font-size: 14px;
+          }
+
+          .orderid {
+            color: var(--primary-color);
+          }
+          .priceBox {
+            width: 68px;
+          }
+        }
+        .listItem_highlighted {
+          @extend .listItem;
+          border: 1px solid variables.$primary-orange-color;
+          border-radius: 8px;
+          font-weight: 800;
+
+          .dateBox {
+            padding: 4px 0px;
+          }
+        }
+      }
+
+      .error {
+        color: var(--text-dark-color);
+        text-align: center;
+      }
+
+      ul li:nth-child(odd) {
+        background-color: var(--red-100);
+        border-radius: 8px;
+      }
+      ul li:first-child {
+        background-color: var(--light-button-color);
+        color: var(--text-dark-color);
+        list-style: none;
+        padding: 11px 21px;
+        border-radius: 5px;
+        position: sticky;
+        top: 0px;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.orderhistory_list_mode {
+  height: 100%;
+  @extend .orderhistory_list;
+}
+.offlineorder_sync {
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    font-size: 17px;
+  }
+  button {
+    padding: 7px 11px 9px;
+    font-size: 12px;
+    background-color: #fc8019;
+    color: variables.$primary-white-color;
+    margin-left: 10px;
+    position: relative;
+    top: 8px;
+    span {
+      top: 3px;
+      margin-left: 6px;
+    }
+  }
+}

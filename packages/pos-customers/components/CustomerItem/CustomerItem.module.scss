@@ -1,0 +1,43 @@
+@use '~/styles/_variables.scss' as variables;
+
+.customeritem {
+  left: 0px;
+  top: 0px;
+  height: max-content;
+  width: 100%;
+  padding: 0px 25px;
+  border-radius: 8px;
+  &:nth-child(even) {
+    background-color: var(--secondary-color);
+  }
+  .customerList {
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    margin: 10px 0px;
+
+    .customer__avatar {
+      margin: 10px 0px;
+    }
+
+    .metainfo {
+      padding: 0px;
+      margin-left: 20px;
+      position: relative;
+      bottom: 20px;
+      margin-top: 12px;
+
+      h5 {
+        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      p {
+        color: variables.$text-hard-gray;
+        font-size: 11px;
+      }
+    }
+  }
+}

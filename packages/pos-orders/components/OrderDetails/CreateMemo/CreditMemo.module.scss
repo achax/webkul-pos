@@ -1,0 +1,76 @@
+@use '~/styles/_variables.scss' as variables;
+
+.createMemeoTxt {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-right: 7.5px;
+  position: relative;
+  color: var(--primary-color);
+  white-space: nowrap;
+  cursor: pointer;
+
+  .memoCount {
+    margin-top: 5px;
+    min-width: 13px;
+    padding: 1px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    top: -5px;
+    right: -4px;
+    background: red;
+    position: absolute;
+  }
+}
+
+.CreditMemo {
+  position: relative;
+  .close {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 19px;
+    position: absolute;
+    top: -9px;
+    right: 16px;
+    height: 19px;
+  }
+  .return_text {
+    width: max-content;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-white-color);
+    margin-top: 15px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .orderID {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: var(--text-white-color);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .memoListing {
+    padding: 2px 3px;
+    min-height: 85vh;
+    overflow-y: auto;
+    overflow: auto;
+
+    .cols {
+      padding: 10px 15px;
+      display: flex;
+      border-radius: 5px;
+      justify-content: space-between;
+    }
+
+    .cols:nth-child(2n + 1) {
+      background-color: var(--secondary-color);
+    }
+  }
+}

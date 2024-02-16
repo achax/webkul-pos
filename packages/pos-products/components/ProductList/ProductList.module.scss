@@ -1,0 +1,62 @@
+@use '~/styles/_variables.scss' as variables;
+
+.product_selector {
+  overflow: hidden;
+  height: 93%;
+  margin-top: 10px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.product_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  overflow-y: hidden;
+  height: auto;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.loader_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  overflow-y: hidden;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.no_data_available {
+  position: absolute;
+  position: absolute;
+  margin: 0 auto;
+  top: 26%;
+  left: 0;
+  right: 0;
+}
+
+.product_item {
+  padding: 20px;
+}
+
+.loader_section {
+  @include variables.flexColumn(center);
+  position: absolute;
+  bottom: 6px;
+  width: 100%;
+  background-color: variables.$primary-background-color;
+  padding-top: 10px;
+
+  &_products {
+    .loader_img {
+      margin-left: 20px;
+    }
+    h1 {
+      margin-top: -4px;
+    }
+  }
+}

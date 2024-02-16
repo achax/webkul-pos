@@ -1,0 +1,35 @@
+@use '~/styles/_variables.scss' as variables;
+
+.mb_10 {
+  list-style: none !important;
+  padding: 1px 2px !important;
+  .order_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 3px;
+    margin: 0px;
+    text-align: center;
+    p {
+      color: variables.$text-color-light;
+    }
+
+    .product_options {
+      font-size: 10px;
+      color: variables.$text-hard-gray;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .customDiscount {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 3px;
+      color: var(--text-red);
+    }
+  }
+  .hide {
+    display: none !important;
+  }
+}

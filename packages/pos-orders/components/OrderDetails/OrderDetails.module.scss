@@ -1,0 +1,223 @@
+@use '~/styles/_variables.scss' as variables;
+
+.section {
+  align-items: end;
+  padding: 15px 0px 2px;
+  background-color: var(--white-color);
+  width: 40%;
+
+  &__main_container {
+    padding: 0px 15px;
+    background-color: var(--white-color);
+    height: calc(100% - 340px);
+    overflow-y: hidden;
+
+    &__container {
+      align-items: center;
+      padding: 0px;
+      box-shadow: inset 0px -1px 0px rgb(0 0 0 / 10%);
+      padding-bottom: 10px;
+
+      .status_circle_success {
+        background-color: variables.$text-green-color;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        margin: 6px 4px;
+      }
+      .status_circle_warning {
+        background-color: var(--warning-400);
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        margin: 6px 4px;
+      }
+      .status_circle_fail {
+        @extend .status_circle_success;
+        background-color: variables.$text-red-color;
+      }
+
+      &__orderid {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+          font-size: 18px;
+          font-weight: 600;
+          width: 100%;
+          display: flex;
+        }
+      }
+
+      &__span {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        padding: 3px 3px;
+
+        .status_success {
+          color: variables.$text-green-color;
+          font-weight: 800;
+        }
+
+        .status_fail {
+          font-weight: 800;
+          color: variables.$text-red-color;
+        }
+      }
+    }
+
+    ul {
+      width: 100%;
+      margin: 15px 0px 0px;
+      padding: 0px;
+      overflow-y: auto;
+      max-height: 35vh;
+
+      .msg {
+        text-align: center;
+        font-size: 15px;
+        margin: 10px 0px;
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    border-top: thin;
+  }
+
+  &__secondaryContainer {
+    background-color: var(--white-color);
+
+    .discountWrapper {
+      background-color: var(--orange-200);
+      padding: 12px;
+      margin: 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    label {
+      font-weight: 550;
+      padding-left: 10px;
+    }
+
+    .discount_linkWrapper {
+      color: var(--primary-color);
+      align-items: center;
+      text-align: center;
+      font-size: 15px;
+      line-height: 19px;
+    }
+  }
+
+  table {
+    background-color: var(--secondary-color);
+    width: 100%;
+
+    .hide {
+      display: none;
+    }
+
+    .grand_total {
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 5px 5px 5px 31px;
+      text-align: left;
+      font-size: 12.5px;
+      font-weight: 400;
+    }
+  }
+
+  &__cart_action_btn {
+    margin: 1px 0px;
+
+    @include variables.gridBoxColumn(2fr 2fr);
+
+    button {
+      width: 95%;
+      border-radius: 8px;
+      white-space: nowrap;
+      @include variables.flex(center, inherit);
+      align-items: center;
+      padding: 8px 8px;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+
+      span {
+        margin: unset;
+      }
+    }
+
+    .close_btn {
+      button {
+        background-color: variables.$primary-white-color;
+        border-radius: 8px;
+        border: 1px solid variables.$primary-orange-color;
+        color: variables.$primary-orange-color;
+      }
+
+      button:hover {
+        background-color: variables.$primary-orange-color;
+        color: variables.$primary-white-color;
+      }
+    }
+  }
+
+  .customer {
+    margin: 10px 0px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    .customer_profile {
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+  }
+}
+
+.section_tab {
+  @extend .section;
+
+  .section__main_container {
+    padding: 0px;
+    ul {
+      padding-right: 0px;
+      padding: 2px;
+    }
+  }
+}
+
+@include variables.tablet {
+  .section {
+    &__category_selector {
+      border-radius: 8px;
+      background-color: var(--white-color);
+      padding: 0px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    display: none;
+  }
+  .section_tab {
+    display: block;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &_wrapper {
+    max-height: 100px;
+  }
+}
