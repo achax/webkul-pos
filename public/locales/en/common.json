@@ -1,0 +1,22 @@
+{
+  "Home": "Home",
+  "Customers": "Customers",
+  "Cashier": "Cashier",
+  "Orders": "Orders",
+  "Reports": "Reports",
+  "Setting": "Setting",
+  "Reset": "Reset",
+  "Search Product...": "Search Product...",
+  "Add Customer": "Add Customer",
+  "Name": "Name",
+  "Phone Number": "Phone Number",
+  "Email": "Email",
+  "Address": "Address",
+  "Country": "Country",
+  "State": "State",
+  "City": "City",
+  "Pincode": "Pincode",
+  "Payable Amount": "Payable Amount",
+  "Drawer Account Summary": "Drawer Account Summary",
+  "Remarks": "Remarks"
+}

@@ -1,0 +1,61 @@
+@use '~/styles/_variables.scss' as variables;
+
+.addcustomer {
+  @include variables.gridBoxColumn(2.5fr 1.5fr);
+  height: 90vh;
+  section:nth-child(1) {
+    padding: 7px;
+    overflow-y: scroll;
+  }
+  &__customer_selector {
+    padding: 3px 10px;
+    border-radius: 8px;
+    height: 50px;
+    // background-color: var(--white-color);
+  }
+  .head {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    justify-content: space-between;
+  }
+  .back {
+    position: relative;
+    top: 3vh;
+    color: var(--text-red);
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .title {
+    font-weight: 400;
+  }
+  .addcustomer_form {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    overflow: auto;
+    button {
+      margin-top: 10px;
+      padding: 11px 40px 16px;
+      span {
+        margin-left: 5px;
+        top: 4px;
+      }
+    }
+  }
+  .addcustomer_form label {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .two_col {
+    display: flex;
+    column-gap: 15px;
+    div {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use '~/styles/_variables.scss' as variables;
+
+.setting {
+  @include variables.gridBoxColumn(1fr 1.5fr);
+  height: max-content;
+  font-family: sans-serif;
+  section:nth-child(1) {
+    padding: 10px;
+  }
+
+  &__category_selector {
+    @include variables.category_selector(8px, 50px, var(--white-color));
+    padding: 3px 10px;
+    width: 100%;
+  }
+}

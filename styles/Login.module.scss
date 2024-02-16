@@ -1,0 +1,115 @@
+@use '~/styles/_variables.scss' as variables;
+
+.login {
+  background-color: var(--secondary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__main {
+    padding: 28px 0;
+    margin: auto;
+    padding: 15px;
+    &_heading {
+      text-align: center;
+      color: var(--text-dark-color);
+      font-size: 2rem;
+      padding-top: 10px;
+    }
+  }
+  &__container {
+    background-color: var(--white-color);
+    border-radius: 5px;
+    padding: 40px 50px;
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+
+    form {
+      margin-bottom: 1.618em;
+
+      p {
+        margin: auto;
+      }
+
+      span {
+        text-transform: capitalize;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0px 35px;
+      color: variables.$text-hard-gray;
+      font-size: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      text-align: left;
+      margin-top: 20px;
+      color: variables.$text-hard-gray;
+      margin-bottom: 5px;
+
+      span {
+        color: variables.$text-red-color;
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-size: 18px;
+      color: variables.$text-hard-gray;
+      text-decoration: none;
+    }
+
+    &__login_remember {
+      float: right;
+      margin: auto;
+
+      label {
+        margin: 0;
+
+        input {
+          width: inherit;
+        }
+      }
+    }
+
+    &__login_submit {
+      margin: auto;
+      text-align: center;
+      margin-top: 15px;
+
+      div {
+        button {
+          display: inline-block;
+          color: var(--white-color);
+          margin-top: 15px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__pos_footer {
+    text-align: center;
+    color: var(--text-dark-color);
+
+    h3 {
+      font-weight: 600;
+      margin: 10px;
+      font-size: 1.618em;
+    }
+
+    p {
+      margin: 0;
+      padding-bottom: 1.41575em;
+    }
+  }
+}

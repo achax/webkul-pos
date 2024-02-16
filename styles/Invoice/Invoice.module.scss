@@ -1,0 +1,115 @@
+@use '~/styles/_variables.scss' as variables;
+
+.invoice {
+  width: 320px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  .invoices_container {
+    background-color: var(--white-color);
+    .wrapper {
+      .head {
+        hr {
+          border-top: 1px dotted var(--dark);
+        }
+        position: relative;
+        text-align: center;
+        .title {
+          text-align: center;
+        }
+        .logo {
+          padding: 10px;
+        }
+        .address {
+          font-weight: 600;
+          display: block;
+        }
+        .greet {
+          margin-bottom: 20px;
+          font-size: 10px;
+        }
+      }
+      .ordertop {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+        label {
+          display: block;
+          font-size: 13px;
+        }
+      }
+      .orderList {
+        margin-top: 1%;
+        height: auto;
+        overflow: scroll;
+        position: relative;
+        overflow: hidden;
+        max-height: max-content;
+
+        .orderHead {
+          height: 100%;
+          overflow: auto;
+
+          .head {
+            display: flex;
+            justify-content: space-between;
+          }
+          ul {
+            padding: 0px;
+            text-align: justify;
+            position: relative;
+            overflow: hidden;
+          }
+          ul li {
+            list-style: none;
+            padding: 11px 21px;
+            cursor: pointer;
+          }
+          color: var(--text-dark-color);
+          list-style: none;
+          border-radius: 5px;
+        }
+        div {
+          font-size: 13px;
+        }
+      }
+    }
+    .orderSubtotal {
+      hr {
+        border-top: 1px dotted var(--dark);
+      }
+      .row {
+        .details {
+          .details_section {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 3px 6px;
+            .details_title {
+              text-align: justify;
+            }
+          }
+
+          .details_section_highlighted {
+            @extend .details_section;
+            font-weight: 600;
+          }
+        }
+      }
+      label {
+        padding: 3px;
+        margin: 3px 0px;
+      }
+    }
+    .cashierData {
+      label {
+        font-size: 12px;
+      }
+    }
+  }
+  img {
+    max-width: inherit;
+    width: inherit;
+  }
+}

@@ -1,0 +1,76 @@
+@use '~/styles/_variables.scss' as variables;
+
+.home {
+  @include variables.gridBoxColumn(2.5fr 1.5fr);
+  overflow: hidden;
+  height: 100vh;
+
+  section {
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    height: calc(100% - 65px);
+  }
+
+  section:nth-child(1) {
+    padding: 15px;
+    max-height: 100vh;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  nav {
+    margin: 0px 8px;
+  }
+
+  &__category_selector {
+    @include variables.category_selector(8px, 50px, --white-color);
+    padding: 3px 10px;
+  }
+
+  &__top_nav_ul {
+    @include variables.top_nav_ul(none, inline-block, 0px, 0px, 500);
+  }
+
+  &__top_nav_ul li {
+    @include variables.top_nav_ul_li(15px, inline-block);
+  }
+
+  &__top_nav_ul li:not(:last-child):hover {
+    color: var(--orange-500) !important;
+    padding: 4px 0px;
+    border: 1px solid var(--orange-500);
+    border-radius: 7px;
+  }
+
+  &__top_nav_link {
+    @include variables.top_nav_link(400, 8px, none);
+    padding: 3px 14px;
+    cursor: pointer;
+  }
+
+  &__exploremore::after {
+    content: url(/assets/icons/external-link.svg);
+  }
+
+  &__nav_exploremore {
+    position: relative;
+    top: 5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home {
+    display: grid;
+    grid-template-columns: none;
+    max-height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    display: grid;
+    grid-template-columns: none;
+    max-height: 100vh;
+  }
+}

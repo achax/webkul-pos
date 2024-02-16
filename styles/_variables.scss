@@ -1,0 +1,223 @@
+$text-primary-black: #171826;
+$primary-light: #ffa85f8a;
+$text-color-light: #9f9f9e;
+$text-dark-color: #171826;
+$primary-background-color: #f6f6f6;
+$primary-white-color: #fff;
+$primary-orange-color: #fc8019;
+$secondary-orange-color: #e36803;
+$tertiary-orange-color: #fdba81;
+
+$light-button-color: #f6f6f8;
+$primary-text-black-color: #242526;
+
+$text-green-color: #09aa29;
+$text-secondary-green-color: #06791d;
+$text-blue-color: #2b6fff;
+$background-red: #ffe8e5;
+$text-red-color: #f83015;
+$transparent-color: transparent;
+$overlay: #00000050;
+$text-gray-color: #9f9f9e;
+$text-hard-gray: #555;
+$text-light-gray: #e3e3e35c;
+$text-light-red: #fff2e8;
+$text-gray: #dfdfdf;
+$text-font-size: 16px;
+$text-font-size-medium: 32px;
+$text-font-size-large: 64px;
+$toggle-padding-left: 5px 0px 0px 14px;
+$toggle-padding-right: 5px 11px 0px 0px;
+
+$text-font-size-variant-sm: 40px;
+$primary-tooltip-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+/* Containers */
+$tablet-width: 768px;
+$small-desktop-width: 1024px;
+$desktop-width: 1360px;
+$large-desktop-width: 2620px;
+
+.not__allowed {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.icon__refresh::before {
+  content: '\e903';
+  font-family: 'icomoon';
+}
+
+@mixin gridBoxColumn($column) {
+  display: grid;
+  grid-template-columns: $column;
+}
+
+@mixin flex($space: space-between, $direction: row) {
+  display: flex;
+  justify-content: $space;
+  flex-direction: $direction;
+}
+
+@mixin flexColumn($type) {
+  display: flex;
+  align-items: $type;
+  flex-direction: column;
+}
+
+@mixin ui_global {
+  padding: 0;
+  list-style: none;
+}
+
+@mixin tool_tip_style(
+  $backgroundColor: $primary-white-color,
+  $color: black,
+  $boxShadow: $primary-tooltip-shadow
+) {
+  background-color: $backgroundColor;
+  color: $color;
+  box-shadow: $boxShadow;
+}
+
+@mixin topButtonBackground {
+  background-color: $secondary-color;
+  border-radius: 5px;
+}
+
+@mixin toggle_switch($content, $backgroundColor, $padding, $color, $fontSize) {
+  content: $content;
+  background-color: $backgroundColor;
+  padding: $padding;
+  color: $color;
+  font-size: $fontSize;
+}
+
+@mixin customerlist_li {
+  @include gridBoxColumn(60px auto);
+  padding: 10px 35px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+@mixin skeletonLoader {
+  // THE LOADING EFFECT
+  background-color: #e2e5e7;
+  // The shine that's going to move across the skeleton:
+  background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 0),
+    rgba(#fff, 0.5),
+    rgba(#fff, 0)
+  );
+  background-size: 40px 100%; // width of the shine
+  background-repeat: no-repeat; // No need to repeat the shine effect
+  background-position: left -40px top 0; // Place shine on the left side, with offset on the left based on the width of the shine - see background-size
+  animation: shine 1s ease infinite; // increase animation time to see effect in 'slow-mo'
+
+  @keyframes shine {
+    to {
+      // Move shine from left to right, with offset on the right based on the width of the shine - see background-size
+      background-position: right -40px top 0;
+    }
+  }
+}
+
+@mixin customerlist_item(
+  $position,
+  $left,
+  $top,
+  $height,
+  $width,
+  $backgroundColor
+) {
+  position: $position;
+  left: $left;
+  top: $top;
+  height: $height;
+  width: $width;
+  background-color: $backgroundColor;
+}
+
+@mixin category_selector($border, $height, $backgroundColor) {
+  border-radius: $border;
+  height: $height;
+  background-color: $backgroundColor;
+}
+
+@mixin top_nav_ul($listStyle, $display, $margin, $padding, $zIndex) {
+  list-style: $listStyle;
+  display: $display;
+  margin-top: $margin;
+  padding: $padding;
+  z-index: $zIndex;
+}
+
+@mixin top_nav_ul_li($fontSize, $display) {
+  font-size: $fontSize;
+  display: $display;
+  border: 1px solid transparent;
+}
+
+@mixin top_nav_link($fontWeight, $borderRadius, $textDecoration) {
+  font-weight: $fontWeight;
+  border-radius: $borderRadius;
+  text-decoration: $textDecoration;
+}
+
+@mixin table($backgroundColor: $white-color, $width: 100%) {
+  background-color: $backgroundColor;
+  width: $width;
+}
+
+@mixin orderTableList(
+  $padding,
+  $margin,
+  $overflow,
+  $backgroundColor,
+  $height,
+  $borderRadius
+) {
+  padding: $padding;
+  margin-top: $margin;
+  overflow-y: $overflow;
+  background-color: $backgroundColor;
+  height: $height;
+  border-radius: $borderRadius;
+}
+
+@mixin discountSpan($backgroundColor, $color) {
+  padding: 21px;
+  border: 1px solid $backgroundColor;
+  background-color: $backgroundColor;
+  border-radius: 11px;
+  color: $color;
+}
+@mixin mobile {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$small-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$small-desktop-width + 1px}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktopMax {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$small-desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin largeDesktop {
+  @media (min-width: #{$desktop-width + 1}) and (max-width: #{$large-desktop-width}) {
+    @content;
+  }
+}

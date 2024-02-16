@@ -1,0 +1,314 @@
+@use '~/styles/_variables.scss' as variables;
+
+.customer {
+  @include variables.gridBoxColumn(2.5fr 1.5fr);
+  overflow: hidden;
+  height: 100vh;
+
+  section:nth-child(1) {
+    padding: 15px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    margin-bottom: 0.5%;
+    height: calc(100% - 70px);
+  }
+
+  section:-nthchild(2) {
+    overflow: hidden;
+    height: calc(100% - 65px);
+  }
+
+  &__customer_selector {
+    padding: 3px 10px;
+    border-radius: 8px;
+    height: 50px;
+  }
+
+  &_list_container {
+    height: calc(100% - 40px);
+    overflow: hidden;
+    @include variables.flexColumn(space-between);
+  }
+
+  &__head {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    justify-content: space-between;
+
+    button {
+      padding: 10px 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-top: 14px;
+    font-size: 20px;
+  }
+
+  &__add_customer {
+    padding: 12px;
+    padding-top: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  &__add_customer span {
+    margin-left: 7px;
+    font-weight: 600;
+    top: 3px;
+  }
+
+  &__edit {
+    @include variables.gridBoxColumn(160px 2fr 1fr);
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    overflow: auto;
+
+    span {
+      margin-left: 7px;
+      top: 4px;
+    }
+
+    &_green {
+      border: 1px solid green !important;
+    }
+
+    &_red {
+      border: 1px solid red !important;
+    }
+  }
+
+  &__vertical_center {
+    display: block;
+  }
+
+  &__customer_action {
+    display: block;
+    padding-left: 20px;
+  }
+
+  &__customer_name {
+    font-weight: 400;
+    line-height: normal;
+    font-size: 26px;
+    margin: 9px 0px;
+    padding: 0px;
+
+    span {
+      font-size: 14px;
+      margin-left: 0px;
+    }
+  }
+
+  &__customer_email {
+    color: variables.$text-color-light;
+  }
+
+  &__customer_phone {
+    color: variables.$text-color-light;
+    padding: 9px 0px;
+  }
+
+  &__update_customer {
+    margin-top: 6px;
+  }
+
+  &__update_customer button {
+    display: inline-block;
+    padding: 9px 24px 11px 12px;
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  &__delete_customer {
+    opacity: 0.3;
+  }
+
+  &__customer_change {
+    display: grid;
+    align-items: end;
+    justify-content: end;
+  }
+
+  &__customer_change button {
+    padding: 11px 21px;
+    background-color: var(--white-color);
+    outline: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  &__list {
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    margin: 10px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+    height: calc(100% - 67px);
+    overflow-y: auto;
+  }
+
+  &__customer_search {
+    background-color: variables.$primary-white-color;
+    margin-right: 10px;
+    position: relative;
+    margin-left: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 2%;
+    margin-top: 2%;
+  }
+
+  &__customer_search input {
+    border: none;
+    width: 96%;
+    background-color: var(--bg-gray-dark);
+    padding-top: 12px;
+    border-bottom: 1px solid var(--border-gray-light);
+    outline: none;
+    padding-bottom: 9px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 40px;
+  }
+  &__customer_search input::placeholder {
+    font-weight: bold;
+  }
+
+  &__searchicon {
+    position: relative;
+    left: 14px;
+    top: 33px;
+    font-size: 21px;
+    color: var(--gray-600);
+  }
+
+  &__details {
+    background-color: var(--white-color);
+    margin: 10px;
+    display: flex;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: 1px solid variables.$primary-orange-color;
+
+    &__avtaar {
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 60px;
+      color: var(--gray-600);
+    }
+    .profile_icon {
+      background-color: var(--primary-color);
+      border-radius: 50%;
+    }
+    .userInfo {
+      margin: 10px;
+      @include variables.flexColumn(space-between);
+
+      .action_btn_container {
+        @include variables.flex(flex-start);
+        margin-left: -10px;
+
+        .action_btn {
+          margin-right: 40px;
+          span:first-child {
+            font-size: 20px;
+            color: var(--gray-600);
+          }
+          @include variables.flex(center, row);
+          cursor: pointer;
+
+          &_txt {
+            margin-top: 13px;
+            font-size: 13px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      h1 {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        font-size: 21px;
+        font-weight: 400;
+      }
+
+      h2 {
+        color: variables.$text-gray-color;
+        font-weight: 400;
+        margin: 0px;
+        margin: 4px 0px;
+        font-size: 12px;
+      }
+
+      &_methods {
+        display: flex;
+        font-size: 12px;
+        flex-direction: row;
+        margin-top: 20px;
+        width: 150px;
+        justify-content: space-between;
+
+        &_item {
+          display: flex;
+          font-size: 12px;
+
+          span {
+            padding: 0px;
+            width: 16px;
+          }
+
+          label {
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .loader {
+    h1 {
+      font-size: 20px;
+    }
+    @include variables.flexColumn(center);
+  }
+}
+
+.cutomer_name_form {
+  overflow-y: scroll;
+  overflow: scroll;
+  // padding-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .customer {
+    display: grid;
+    grid-template-columns: none;
+    height: 90vh;
+  }
+}
+
+@include variables.tablet {
+  .customer {
+    height: 100vh;
+    section:nth-child(1) {
+      height: calc(100% - 80px);
+    }
+  }
+}

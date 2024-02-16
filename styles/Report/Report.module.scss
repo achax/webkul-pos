@@ -1,0 +1,41 @@
+@use '~/styles/_variables.scss' as variables;
+
+.reports {
+  display: grid;
+  height: 100vh;
+  font-family: sans-serif;
+  section:nth-child(1) {
+    padding: 15px;
+    padding-bottom: 0px;
+  }
+
+  &_section {
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .tab_container {
+    margin-top: 1%;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  &__category_selector {
+    @include variables.category_selector(8px, 50px, var(--white-color));
+    padding: 3px 10px;
+    width: 30%;
+  }
+}
+
+@include variables.tablet {
+  .reports {
+    &__category_selector {
+      border-radius: 8px;
+      background-color: var(--white-color);
+      padding: 0px;
+      width: 100%;
+    }
+  }
+}

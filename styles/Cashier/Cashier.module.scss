@@ -1,0 +1,43 @@
+@use '~/styles/_variables.scss' as variables;
+
+.cashier {
+  display: grid;
+  // font-family: sans-serif;
+  height: 100vh;
+
+  section:nth-child(1) {
+    padding: 15px;
+    height: 100%;
+  }
+
+  &__cashier_section {
+    background-color: var(--gray-500);
+    overflow: hidden;
+    height: 100%;
+
+    .tab_list {
+      overflow: hidden;
+      height: calc(100% - 100px);
+    }
+  }
+
+  &__category_selector {
+    @include variables.category_selector(8px, 44px, var(--white-color));
+    padding: 3px 10px;
+    min-width: 600px;
+    max-width: 700px;
+    margin-left: 10px;
+  }
+}
+
+@include variables.tablet {
+  .cashier {
+    &__cashier_section {
+      background-color: var(--gray-500);
+    }
+
+    &__category_selector {
+      width: auto;
+    }
+  }
+}

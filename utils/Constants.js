@@ -1,0 +1,15 @@
+export const CUSTOM_PRODUCT_SKU = 'pos_custom_product';
+export const DEFAULT_PAGE_SIZE = 50;
+export const VISIBILITY_CATALOG = '2';
+export const VISIBILITY_CATALOG_SEARCH = '4';
+export const PRODUCT_NOT_AVAILABLE = '0';
+export const POS_MODES = 'pos-mode';
+export const AUTH_TOKEN = 'access-token';
+export const TAX_METHOD_ROW_TOTAL = 'ROW_BASE_CALCULATION';
+export const TAX_METHOD_UNIT_BASE = 'UNIT_BASE_CALCULATION';
+export const TAX_METHOD_TOTAL_CALCULATION = 'TOTAL_BASE_CALCULATION';
+export const APPLY_CUSTOMER_TAX_AFTER_DISCOUNT = 1;
+export const APPLY_CUSTOMER_TAX_BEFORE_DISCOUNT = 0;
+export const OFFLINE_MODE_ENABLE_APP_OFFLINE = 2;
+export const OFFLINE_MODE_ENABLE = 1;
+export const OFFLINE_MODE_DISABLE = 0;

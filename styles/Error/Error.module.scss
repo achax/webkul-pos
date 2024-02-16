@@ -1,0 +1,25 @@
+@use '~/styles/_variables.scss' as variables;
+
+.error {
+  @include variables.flex(space-between, column);
+  align-items: center;
+
+  h2 {
+    font-size: variables.$text-font-size-medium;
+  }
+
+  h3 {
+    font-size: variables.$text-font-size + 5px;
+    margin: 20px;
+    font-weight: 600;
+  }
+
+  &__card {
+    @include variables.flex(space-between, row);
+    justify-content: center;
+    border: 1px solid var(--orange-500);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: var(--dark-50) 0px 3px 8px;
+  }
+}
