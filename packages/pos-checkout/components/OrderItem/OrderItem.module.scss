@@ -1,0 +1,241 @@
+@use '~/styles/_variables.scss' as variables;
+
+.mb_10 {
+  margin-bottom: 10px;
+  list-style: none;
+
+  .cart_product {
+    background-color: var(--text-gray);
+    @include variables.gridBoxColumn(3fr auto);
+    padding: 2px 8px;
+    border-radius: 8px;
+
+    &_info {
+      &_bar {
+        display: flex;
+      }
+
+      &_details {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 8px;
+
+        &_name {
+          display: flex;
+          width: 300px;
+
+          span {
+            margin: 0px;
+            padding: 0px;
+            width: 20px;
+          }
+
+          &_icon {
+            width: 10px;
+            margin-left: 2px;
+          }
+
+          &_section {
+            display: flex;
+          }
+
+          span {
+            display: flex;
+          }
+
+          h2 {
+            font-size: 13px;
+            font-weight: 560;
+            padding: 0px 10px;
+            width: 30px;
+            font-weight: 500;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden !important;
+          }
+
+          h1 {
+            font-size: 13px;
+            font-weight: 560;
+            padding: 0px 10px;
+          }
+
+          h3 {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 0px 10px;
+          }
+        }
+
+        &_price {
+          display: flex;
+          justify-content: center;
+          margin-right: 20px;
+
+          h1 {
+            font-size: 13px;
+            padding-top: 2px;
+            font-weight: 560;
+          }
+        }
+      }
+
+      &_options {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 21px;
+        position: relative;
+        margin-top: 4px;
+
+        &_details {
+          margin-top: -8px;
+          margin-left: 55px;
+
+          h6 {
+            font-size: 12px;
+            font-weight: 560;
+            margin: 0px;
+            margin-top: -4px;
+            padding: 0px 0px;
+          }
+
+          h3 {
+            font-size: 11px;
+            color: black;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            margin-bottom: 2px;
+            margin-left: 4px;
+            font-weight: 500;
+          }
+
+          h1 {
+            font-size: 11px;
+            color: black;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            margin-bottom: 2px;
+            margin-left: 4px;
+          }
+
+          p {
+            font-size: 11px;
+            padding: 1px 0px;
+            color: variables.$text-hard-gray;
+          }
+        }
+
+        &_price {
+          margin-top: -12px;
+
+          display: flex;
+          flex-direction: column;
+          align-content: flex-end;
+          width: 100%;
+
+          &_option {
+            display: flex;
+            width: 100%;
+            height: 16px;
+          }
+
+          h1 {
+            font-size: 11px;
+            color: variables.$text-red-color;
+          }
+
+          h1:nth-child(1) {
+            color: variables.$text-hard-gray;
+            margin-right: 4px;
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      &_price_custom {
+        @extend .cart_product_info_options_price;
+        background-color: blue;
+      }
+    }
+
+    p {
+      color: var(--dark);
+    }
+
+    .cart_price {
+      font-size: 15.5px;
+      font-weight: 550;
+    }
+
+    .customDiscount {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 3px;
+      color: var(--text-red);
+    }
+
+    .unit {
+      font-size: 11px;
+      padding: 0px;
+    }
+
+    .product_options {
+      font-weight: 500;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0px;
+    }
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .qty_price {
+    @include variables.gridBoxColumn(2fr 2fr);
+    grid-column-gap: 15px;
+    padding-bottom: 10px !important;
+    padding: 0px 30px;
+    background-color: var(--secondary-color);
+
+    label {
+      font-size: 12px;
+    }
+
+    div {
+      @include variables.flex(inherit, column);
+
+      input {
+        border-radius: 8px;
+        width: 100%;
+      }
+    }
+  }
+
+  div {
+    h4 {
+      margin-bottom: 3px;
+    }
+
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cart_product {
+    h4 {
+      font-size: 12px;
+    }
+
+    .cart_price {
+      font-size: 12px !important;
+    }
+  }
+}

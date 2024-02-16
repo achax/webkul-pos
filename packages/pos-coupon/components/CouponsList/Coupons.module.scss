@@ -1,0 +1,17 @@
+@use '~/styles/_variables.scss' as variables;
+
+.coupon_wrapper {
+  ul {
+    padding: 5px 5px;
+    /* margin: 5px 5px; */
+    list-style: none;
+    height: 27vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  h4 {
+    text-align: center;
+    margin-top: 10%;
+  }
+}

@@ -1,0 +1,216 @@
+@use '~/styles/_variables.scss' as variables;
+
+.drawer {
+  @include variables.gridBoxColumn(repeat(3, minmax(0, 1fr)));
+  column-gap: 15px;
+
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: 1%;
+
+  .opening_balance,
+  .current_cash_bal,
+  .current_card_bal {
+    margin: 13px 10px;
+
+    padding: 4px 20px;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    border-radius: 8px;
+
+    h3 {
+      margin: 10px 4px;
+      font-size: 15px;
+    }
+
+    .opening_drawer {
+      color: var(--primary-color);
+    }
+
+    span {
+      font-size: 24px;
+      color: var(--text-green-color);
+      display: inline-block;
+      margin-left: 4px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .current_card {
+      color: var(--text-red);
+    }
+  }
+}
+
+.tabledata,
+.order_list {
+  margin: 10px;
+}
+
+.order_list {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 20px);
+}
+
+.tabledata {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 140px);
+}
+
+.tabledata h3 {
+  margin: 10px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.order_list h3 {
+  margin: 22px 10px;
+}
+
+.sale_panel {
+  width: 100%;
+  position: relative;
+  height: calc(100% - 40px);
+}
+
+.todaycash_panel {
+  position: relative;
+  height: calc(100% - 50px);
+}
+
+.pos_day {
+  width: 100%;
+  margin: 0px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  overflow-y: auto;
+
+  .orderList {
+    .orderHead {
+      .head {
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 20px;
+        text-align: center;
+        font-size: variables.$text-font-size - 1px;
+        color: variables.$text-primary-black;
+      }
+
+      ul {
+        padding: 0px;
+        text-align: justify;
+      }
+
+      ul li {
+        list-style: none;
+        padding: 11px 21px;
+        margin: 10px;
+        cursor: pointer;
+
+        .listItem {
+          display: flex;
+          justify-content: space-between;
+
+          div {
+            width: 7%;
+            position: relative;
+            margin: 0px;
+            padding: 4px 4px;
+            right: 5px;
+            align-items: center;
+          }
+        }
+      }
+
+      .sale_item {
+        div {
+          color: variables.$text-hard-gray;
+        }
+      }
+
+      li:nth-child(2n + 1) {
+        background-color: var(--secondary-color);
+      }
+
+      .error {
+        color: var(--text-dark-color);
+        text-align: center;
+        margin-top: -10%;
+      }
+
+      ul li:nth-child(odd) {
+        background-color: #eee;
+      }
+
+      ul li:first-child {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        list-style: none;
+        padding: 11px 21px;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .order_list {
+    overflow: auto;
+    .table_list {
+      width: 100%;
+    }
+
+    .table_header {
+      background-color: variables.$primary-background-color;
+      width: 100%;
+      position: sticky;
+      top: 0;
+
+      tr {
+        text-align: left;
+      }
+
+      td {
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 0px;
+        padding-left: 30px;
+      }
+    }
+
+    .table_item {
+      tr {
+        text-align: left;
+        border-radius: 200px;
+      }
+
+      tr:nth-child(even) {
+        background-color: variables.$primary-background-color;
+      }
+
+      td {
+        padding: 20px 20px;
+        font-size: 14px;
+        padding-left: 31px;
+      }
+    }
+  }
+
+  .rdg {
+    grid-template-columns: auto;
+  }
+}
+
+@include variables.tablet {
+  .drawer {
+    .opening_balance,
+    .current_cash_bal,
+    .current_card_bal {
+      h3 {
+        margin: 6px 0px;
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,235 @@
+@use '~/styles/_variables.scss' as variables;
+
+.category_selector {
+  background-color: variables.$primary-white-color;
+  border-radius: 8px;
+
+  padding: 0px 10px;
+
+  padding-top: 6px;
+
+  .top_nav_ul {
+    @include variables.top_nav_ul(none, inline-block, 0px, 0px, 500);
+
+    .right_nav {
+      position: relative;
+      font-weight: 460;
+      position: relative;
+      margin: 0px 0px 0px 20px;
+      font-size: 15px;
+    }
+
+    .badge {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 13px;
+      border-radius: 3px;
+      padding: 2px 5px;
+      margin: 2px 2px;
+    }
+  }
+
+  .parent {
+    margin-top: 7px !important;
+  }
+
+  .child {
+    margin-top: 0px !important;
+  }
+
+  .arrow_right {
+    cursor: pointer;
+    margin: 0px 0px 0px 6px;
+  }
+
+  .selectedCategory_container {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin-top: 12px;
+    }
+
+    span {
+      margin: 4px 8px;
+    }
+  }
+
+  .top_nav_ul li {
+    @include variables.top_nav_ul_li(15px, inline-block);
+  }
+
+  .top_nav_ul li:hover {
+    color: var(--primary-color);
+    border-radius: 7px;
+    border: 1px solid transparent;
+    padding: 0px;
+
+    a {
+      color: variables.$primary-orange-color;
+      transition: all 250ms ease-in-out;
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .li_selected {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color);
+    border-radius: 7px;
+    color: var(--white-color) !important;
+
+    &:hover {
+      border: 1px solid var(--primary-color);
+    }
+  }
+
+  .top_nav_link {
+    @include variables.top_nav_link(400, 8px, none);
+    padding: 4px 14px;
+    cursor: pointer;
+    font-size: 15.6px;
+    transition: all 0.3s ease-in-out;
+    color: var(--text-white-color);
+  }
+
+  .exploremore::after {
+    content: url(/assets/icons/external-link.svg);
+  }
+  .nav_exploremore {
+    position: relative;
+    top: 5px;
+  }
+}
+
+.dropMenu {
+  overflow: scroll;
+  overflow-y: scroll;
+
+  .category_container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-y: visible;
+    min-height: 100vh;
+  }
+
+  .header_section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    a {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+
+  a {
+    margin-left: -14px;
+    display: flex;
+
+    span {
+      margin-top: -12px;
+      margin-left: 6px;
+    }
+  }
+
+  .child_category_list_container {
+    overflow: scroll;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+}
+
+.categories_container {
+  .heading_section {
+    display: flex;
+    margin-top: -18px;
+    height: 58px;
+    padding: 0px 3px;
+    justify-content: space-between;
+    border-bottom: 0.8px solid var(--devider-gray-color);
+    span {
+      width: 20px;
+      margin-top: 10px;
+      font-size: 20px;
+      margin-right: 7px;
+    }
+  }
+
+  &_list {
+    overflow: auto;
+    max-height: 50vh;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding-bottom: 5%;
+
+    div {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    div:hover {
+      background: var(--hover-primar-color);
+      cursor: pointer;
+      border-radius: 4px !important;
+    }
+
+    div {
+      div {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+    }
+  }
+
+  &_item {
+    a {
+      font-size: 14px;
+      margin: 10px 0px;
+      line-height: 30px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+}
+
+.child_category {
+  display: flex;
+  padding: 5px 0px;
+
+  padding-top: 6px;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  span {
+    margin-top: -2px;
+  }
+}
+
+.child_category_section {
+  margin-top: -6px;
+
+  h4 {
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 4px 0px;
+  }
+}
