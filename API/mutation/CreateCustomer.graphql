@@ -1,0 +1,10 @@
+mutation CreateCustomer($input: PosCustomerInput!) {
+  posCreateCustomer(input: $input) {
+    customer {
+      name
+      email
+      entity_id
+      phone_number
+    }
+  }
+}

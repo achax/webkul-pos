@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@webkul/*": ["./packages/*"],
+      "@store/*": ["./store/*"]
+    }
+  },
+  "exclude": ["./node_modules/*"]
+}

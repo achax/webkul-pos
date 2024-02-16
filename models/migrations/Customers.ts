@@ -1,0 +1,29 @@
+export interface CustomersInterface {
+  entity_id: number;
+  name: string;
+  email: string;
+  group_id: number;
+  created_at: string;
+  website_id: number;
+  confirmation: number;
+  created_in: string;
+  dob: string;
+  gender: number;
+  taxvat: string;
+  lock_expires: number;
+  phone_number: string;
+  shipping_full: string;
+  billing_full: string;
+  billing_firstname: string;
+  billing_lastname: string;
+  billing_telephone: string;
+  billing_postcode: string;
+  billing_country_id: string;
+  billing_region: string;
+  billing_region_id: string;
+  billing_street: string;
+  billing_city: string;
+  billing_fax: string;
+  billing_vat_id: string;
+  billing_company: string;
+}

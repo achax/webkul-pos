@@ -1,0 +1,66 @@
+query OrderListQuery {
+  ordersList {
+    items {
+      items {
+        sku
+        qty
+        name
+        price
+        discount
+        baseSubtotal
+        subtotal
+        orderItemId
+        discount_type
+        product_type
+        pos_custom_option {
+          name
+          price
+          quantity
+          description
+        }
+        product_option {
+          extension_attributes {
+            custom_options {
+              option_id
+              option_value
+            }
+          }
+        }
+        displayOption
+      }
+      outlet_id
+      order_id
+      increment_id
+      date
+      state
+      status
+      message
+      state
+      address
+      cashier_name
+      base_cash_received
+      grand_total
+      pos_order_id
+      grandtotal_discount
+      tax
+      cash_received
+      cash_returned
+      cashier_id
+      payment_info_data
+      synchronized
+      currency_code
+      base_sub_total
+      sub_total
+      coupon_info {
+        coupon_code
+        discount_amount
+        from_date
+        is_active
+        rule_id
+        simple_action
+        to_date
+      }
+    }
+    total_count
+  }
+}

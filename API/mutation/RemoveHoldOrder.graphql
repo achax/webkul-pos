@@ -1,0 +1,6 @@
+mutation RemoveHoldOrder($input: Int!) {
+  deleteHoldOrder(id: $input) {
+    status
+    message
+  }
+}

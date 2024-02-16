@@ -1,0 +1,17 @@
+query StoreList {
+  storeList {
+    currencies {
+      currency
+      rate
+    }
+    group_id
+    store_id
+    locale_code
+    locale_label
+    is_currently_active
+    code
+    website_id
+    name
+    group_id
+  }
+}

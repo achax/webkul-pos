@@ -1,0 +1,10 @@
+mutation UpdateCustomerDetails($input: PosCustomerInput!) {
+  posUpdateCustomer(input: $input) {
+    customer {
+      name
+      email
+      entity_id
+      phone_number
+    }
+  }
+}

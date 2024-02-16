@@ -1,0 +1,18 @@
+query CouponsQuery {
+  cartRuleList {
+    total_count
+    items {
+      coupon_code
+      rule_id
+      name
+      description
+      from_date
+      to_date
+      is_active
+      simple_action
+      discount_amount
+      discount_step
+      customer_group_ids
+    }
+  }
+}

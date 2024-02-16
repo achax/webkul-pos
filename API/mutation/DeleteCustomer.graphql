@@ -1,0 +1,6 @@
+mutation DeleteCustomer($input: Int!) {
+  posDeleteCustomer(id: $input) {
+    status
+    message
+  }
+}

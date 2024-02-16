@@ -1,0 +1,34 @@
+query CategoryQuery {
+  posCategoriesList {
+    categories_list {
+      category_id
+      parent_id
+      name
+      position
+      level
+      is_active
+      is_allowed
+      product_count
+      children_data {
+        category_id
+        parent_id
+        name
+        position
+        level
+        is_active
+        is_allowed
+        product_count
+        children_data {
+          category_id
+          parent_id
+          name
+          position
+          level
+          is_active
+          is_allowed
+          product_count
+        }
+      }
+    }
+  }
+}

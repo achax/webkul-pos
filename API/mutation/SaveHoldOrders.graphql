@@ -1,0 +1,11 @@
+mutation SaveHoldOrders($input: HoldOrdersInput!) {
+  saveHoldOrders(holdOrderData: $input) {
+    id
+    date
+    cashier_id
+    outlet_id
+    synchronized
+    currency_code
+    note
+  }
+}

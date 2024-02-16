@@ -1,0 +1,100 @@
+query POS_REPORTS {
+  posReport {
+    day {
+      grossRevenueTotal
+      netRevenueTotal
+      totalOrder
+      averageOrder
+      averageItemOrder
+      totalDiscountedOffer
+      grossRevenue {
+        values
+        label
+      }
+      netRevenue {
+        values
+        label
+      }
+      orderData {
+        values
+        label
+      }
+      averageOrderValue {
+        values
+        label
+      }
+      averageItemPerOrder {
+        values
+        label
+      }
+      discountedOffers {
+        values
+        label
+      }
+    }
+    week {
+      grossRevenueTotal
+      netRevenueTotal
+      totalOrder
+      averageOrder
+      averageItemOrder
+      totalDiscountedOffer
+      grossRevenue {
+        values
+        label
+      }
+      netRevenue {
+        values
+        label
+      }
+      orderData {
+        values
+        label
+      }
+      averageOrderValue {
+        values
+        label
+      }
+      averageItemPerOrder {
+        values
+        label
+      }
+      discountedOffers {
+        values
+        label
+      }
+    }
+    month {
+      grossRevenueTotal
+      netRevenueTotal
+      totalOrder
+      averageOrder
+      averageItemOrder
+      totalDiscountedOffer
+      grossRevenue {
+        values
+        label
+      }
+      netRevenue {
+        values
+        label
+      }
+      orderData {
+        values
+        label
+      }
+      averageOrderValue {
+        values
+        label
+      }
+      averageItemPerOrder {
+        values
+        label
+      }
+      discountedOffers {
+        values
+        label
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+query CashDrawerQuery {
+  cashDrawersList {
+    items {
+      id
+      date
+      note
+      transactions {
+        balance
+        cashReceived
+        cashReturned
+        currencyCode
+        date
+        grand_total
+        incrementId
+        payment_info_data
+        posOrderId
+        is_synced
+      }
+      initial_amount
+      base_initial_amount
+      remaining_amount
+      base_remaining_amount
+      cashier_id
+      currency_code
+      outlet_id
+      is_synced
+      created_at
+      updated_at
+      closed_at
+      status
+    }
+    total_count
+  }
+}

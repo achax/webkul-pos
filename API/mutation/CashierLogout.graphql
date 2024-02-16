@@ -1,0 +1,11 @@
+mutation CashierLogout {
+  cashierLogout(
+    orders: null
+    cashDrawer: null
+    holdOrders: null
+    cartItem: null
+  ) {
+    message
+    status
+  }
+}

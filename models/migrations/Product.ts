@@ -1,0 +1,36 @@
+export interface ProductInterface {
+  entity_id: number;
+  required_option: number;
+  type_id: number;
+  created_at: string;
+  has_options: number;
+  image: string;
+  image_label: string;
+  name: string;
+  price: number;
+  price_type: string;
+  price_view: string;
+  short_description: string;
+  sku: string;
+  thumbnail_image: string;
+  thumbnail_image_label: string;
+  special_date_from: string;
+  special_date_to: string;
+  tax_class_id: number;
+  category_id: number;
+  barcode_attribute: string;
+  quantity: number;
+  configurable_product_options: string;
+  configurable_super_attributes: string;
+  custom_options: string;
+  grouped_options: string;
+  super_attributes: string;
+  bundle_options: number;
+  visibility: number;
+  max_sale_qty: number;
+  min_sale_qty: number;
+  is_qty_increment: number;
+  is_qty_decimal_allowed: number;
+  min_qty_increment: number;
+  final_price: number;
+}

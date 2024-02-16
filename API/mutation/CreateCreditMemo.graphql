@@ -1,0 +1,19 @@
+mutation CreateCreditMemo($creditMemoData: CreditMemoInput!) {
+  saveCreditMemo(creditMemoData: $creditMemoData) {
+    id
+    status
+    message
+    cashier_id
+    order_id
+    creditmemo_id
+    creditmemo_increment_id
+    return_amount
+    creditmemo_status
+    date
+    item_qtys {
+      item_id
+      qty
+      type
+    }
+  }
+}

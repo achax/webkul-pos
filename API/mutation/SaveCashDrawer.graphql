@@ -1,0 +1,6 @@
+mutation SaveCashDrawer($input: CashDrawerInput!) {
+  saveCashDrawer(cashDrawerData: $input) {
+    status
+    message
+  }
+}

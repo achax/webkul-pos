@@ -1,0 +1,15 @@
+query TaxRuleList {
+  taxRuleList {
+    items {
+      calculate_subtotal
+      code
+      customer_tax_classes
+      position
+      priority
+      product_tax_classes
+      tax_calculation_rule_id
+      tax_rates
+    }
+    total_count
+  }
+}

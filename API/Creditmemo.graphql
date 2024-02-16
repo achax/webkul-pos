@@ -1,0 +1,19 @@
+query Creditmemo {
+  creditMemoList {
+    items {
+      cashier_id
+      creditmemo_id
+      creditmemo_increment_id
+      creditmemo_status
+      date
+      id
+      item_qtys {
+        item_id
+        qty
+        type
+      }
+      order_id
+      return_amount
+    }
+  }
+}

@@ -1,0 +1,34 @@
+Legend
+
+Adding Products By
++ Features
+- Bugs
+
+-------------------------------- Version 1.0.0 --------------------------------
+
+ + The user agent can create create-memo list with Return to back
+ + Edit Address of customer.
+ + Added PWA feature.
+ + Cash drawer print option.
+ + Product sync in background.
+ + Options details in invoice.
+ + Custom discount to cart items.
+ + Login credentials to cashier via email.
+ + Discount Coupon.
+ + Split Payment Added.
+ + Multi Currency Support Added.
+ + Order Return/Credit Memo Operation included.
+ + Credit Card payment method included (virtually).
+ + Keyboard shortcuts added for operation, mentioned in readme.txt.
+ + Single Login of cashier for integrity, Optional from configuration.
+ + Use of Indexed DB for faster and better promise based operation on browser.
+ + Pos Payment included.
+ + Pos Shipping included.
+ + Tax calculation included.
+ + Works with custom option.
+ + Works with simple and virtual product.
+
+ + Added POS Order column and filter in Sales Order Grid.
+ + Added Admin can create the custom payment methods label for POS that will be printed in receipts and invoices.
+ + Customer search by phone number at POS end.
+ + Added Reporting.

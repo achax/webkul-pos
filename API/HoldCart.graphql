@@ -1,0 +1,44 @@
+query HoldCartQuery {
+  holdOrdersList {
+    items {
+      id
+      date
+      items {
+        sku
+        qty
+        name
+        price
+        displayOption
+        discount
+        discount_type
+        product_type
+        displayOption
+        pos_custom_option {
+          name
+          price
+          quantity
+          description
+        }
+        product_option {
+          extension_attributes {
+            custom_options {
+              option_id
+              option_value
+            }
+          }
+        }
+        subtotal
+        baseSubtotal
+        taxAmount
+      }
+      note
+      currency_code
+      grand_total
+      base_grand_total
+
+      outlet_id
+      synchronized
+    }
+    total_count
+  }
+}

@@ -1,0 +1,19 @@
+mutation CashierLogin($userName: String!, $password: String!) {
+  cashierLogin(username: $userName, password: $password) {
+    id
+    email
+    firstname
+    outlet_id
+    lastname
+    filename
+    store_code
+    status
+    token
+    contactno
+    user_cart_item_list
+    customer_id
+    store_id
+    currency
+    symbol
+  }
+}
