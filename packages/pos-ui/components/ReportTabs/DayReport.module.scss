@@ -1,0 +1,72 @@
+@use '~/styles/_variables.scss' as variables;
+
+.drawer_section {
+  @include variables.gridBoxColumn(repeat(3, minmax(0, 1fr)));
+  column-gap: 15px;
+
+  .gross_report {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 20px 0px;
+    padding: 0px 0px 12px;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    border-radius: 8px;
+
+    .report_head {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 15px;
+    }
+
+    label {
+      display: block;
+      line-height: 30px;
+      color: variables.$text-color-light;
+    }
+
+    .opening_drawer {
+      color: var(--primary-color);
+    }
+
+    span {
+      font-size: 20px;
+      color: var(--text-dark-color);
+      display: inline-block;
+      margin: 0px;
+      font-weight: 600;
+    }
+    .percent_box {
+      padding: 11px 11px;
+      background-color: var(--blue-100);
+      display: flex;
+      label {
+        color: variables.$text-blue-color;
+        font-size: 14px;
+      }
+      span {
+        top: 3px;
+        margin-left: 2px;
+      }
+    }
+    .percent_box_min {
+      padding: 11px 11px;
+      background-color: variables.$background-red;
+      display: flex;
+      label {
+        color: variables.$text-red-color;
+        font-size: 14px;
+      }
+      span {
+        top: 3px;
+        margin-left: 2px;
+      }
+    }
+  }
+}
+$breakpoint-tablet: 1200px;
+@media (max-width: $breakpoint-tablet) {
+  .drawer_section {
+    @include variables.gridBoxColumn(repeat(2, minmax(0, 1fr)));
+  }
+}

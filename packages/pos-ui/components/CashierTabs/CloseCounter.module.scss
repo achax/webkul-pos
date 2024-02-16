@@ -1,0 +1,56 @@
+@use '~/styles/_variables.scss' as variables;
+
+.pos__drawer_amount {
+  margin: 20px 0px;
+  width: 50%;
+  h3 {
+    margin-left: 13px;
+  }
+
+  ul {
+    background-color: var(--white-color);
+    margin: 10px 0px;
+    border-radius: 8px;
+    padding: 15px;
+    list-style: none;
+  }
+  li:nth-child(2n + 1) {
+    background-color: var(--secondary-color);
+  }
+
+  li {
+    @include variables.gridBoxColumn(2fr 2fr);
+    list-style: none;
+    padding: 15px;
+    margin: 0px;
+
+    label {
+      display: block;
+      font-size: 16px;
+      color: var(--text-dark-color);
+      font-weight: 400;
+      margin: 0px;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: var(--text-dark-color);
+      text-align: right;
+      margin: 0px;
+    }
+  }
+
+  textarea {
+    margin-left: 10px;
+  }
+
+  button {
+    margin: 10px;
+  }
+}
+
+@include variables.tablet {
+  .pos__drawer_amount {
+    width: 100%;
+  }
+}

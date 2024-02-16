@@ -1,0 +1,299 @@
+@use '~/styles/_variables.scss' as variables;
+
+.header_container {
+  .header_tool_tip {
+    @include variables.tool_tip_style();
+  }
+
+  .loader {
+    text-align: center;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 460;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    width: 100%;
+    z-index: 9999999;
+    left: 0px;
+    top: 0px;
+    background-color: var(--white-color);
+    box-shadow: inset 0px -1px 0px rgb(0 0 0 / 10%);
+    padding: 1px 20px;
+    transition: background-color 1s;
+
+    .search_product_wrapper {
+      padding: 1px 10px;
+      width: 50%;
+      position: absolute;
+      left: 95px;
+      margin-top: -5px;
+
+      .search_product {
+        padding: 10px 15px 6px 18px;
+        width: 100%;
+        display: flex;
+
+        input {
+          padding: 11px 14px;
+          padding-left: 55px;
+          background-color: var(--light-button-color);
+          font-size: 14px;
+          border: none;
+          border-radius: 8px;
+          outline: none;
+
+          &:hover {
+            outline: none;
+          }
+
+          &:focus-visible {
+            border: 1px solid var(--primary-color);
+          }
+
+          &.onfocusout {
+            border: 1px solid var(--primary-color);
+          }
+        }
+
+        .searchicon {
+          position: absolute;
+          font-size: 22px;
+          font-weight: 400;
+          color: variables.$text-hard-gray;
+          bottom: 0px;
+          top: 18px;
+          left: 32px;
+          margin-top: 0px;
+        }
+
+        div {
+          min-width: 90px;
+          padding-top: 13px;
+        }
+
+        .barcode_ {
+          margin-top: 3px;
+          margin-left: 10px;
+          background: var(--secondary-color);
+          color: var(--gray-600);
+          width: 100px;
+          padding: 6px;
+          border-radius: 8px;
+          font-size: 25px;
+        }
+      }
+    }
+
+    .pos_logo {
+      overflow: hidden;
+
+      h3 {
+        margin: 8px 0px 0px 5px;
+        font-weight: 600;
+        color: var(--text-dark-color);
+        padding-right: 100px;
+        margin-top: 6px;
+      }
+
+      .img_loader {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @include variables.skeletonLoader();
+        margin-top: 6px;
+      }
+    }
+
+    ul {
+      @include variables.ui_global;
+      display: inline-block;
+      margin-bottom: 0px;
+      margin-top: 10px;
+      text-align: right;
+      margin-right: 5px;
+
+      li {
+        display: inline-block;
+        color: var(--text-dark-color);
+        cursor: pointer;
+        height: 36px;
+        width: 32px;
+        margin: 0px 4px;
+      }
+    }
+
+    .right_side_container {
+      display: flex;
+      width: 100%;
+      padding: 10px 10px;
+      justify-content: space-between;
+
+      .counterStatus {
+        animation: animate 1.5s linear infinite;
+        color: variables.$primary-orange-color;
+        font-weight: 600;
+        display: flex;
+        margin-top: 3%;
+
+        span {
+          position: absolute;
+          top: 20px;
+          right: 26%;
+        }
+      }
+
+      .icon_btn_container {
+        display: flex;
+        justify-content: space-around;
+
+        .icon_btn {
+          flex-direction: row;
+          border-radius: 8px;
+          background-color: variables.$primary-background-color;
+          margin: 0px 6px;
+          position: relative;
+
+          .icon {
+            margin: 0px 2px;
+
+            div {
+              padding-top: 11px;
+              font-size: 20px;
+              color: var(--gray-600);
+              -webkit-transition: 0.9s ease-out;
+              -moz-transition: 0.9s ease-out;
+              transition: 0.9s ease-out;
+            }
+
+            div:hover {
+              span {
+                transform: rotateY(360deg);
+              }
+            }
+          }
+
+          .icon_notification {
+            color: variables.$text-red-color;
+            position: absolute;
+            font-weight: 700;
+            left: 32px;
+            top: 3px;
+          }
+        }
+
+        .icon_btn_syncing {
+          @extend .icon_btn;
+        }
+
+        .logout_btn {
+          @extend .icon_btn;
+          background-color: variables.$text-red-color;
+
+          .logout_icon {
+            margin: 6px 6px;
+
+            span {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+
+        .cart_btn {
+          @extend .icon_btn;
+
+          .cart_icon {
+            position: relative;
+            @include variables.flexColumn(center);
+
+            label {
+              position: absolute;
+              font-size: 9px;
+              top: 4px;
+              font-weight: 700;
+              margin-left: 21px;
+              padding-top: 4px;
+              background: var(--text-green-color);
+              text-align: center;
+              color: var(--red-200);
+              padding-left: 5px;
+              padding-bottom: 3px;
+              padding-right: 6px;
+              border-radius: 90px;
+            }
+
+            span {
+              margin-left: 2px;
+              margin-right: 2px;
+            }
+          }
+        }
+      }
+
+      @keyframes animate {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 0.7;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    &_barcode {
+      opacity: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .counterStatus {
+    font-size: 14px;
+  }
+
+  .header_container {
+    .header {
+      justify-content: unset;
+
+      .pos_logo {
+        overflow: hidden;
+
+        h3 {
+          margin: 8px 0px 0px 1px;
+        }
+      }
+    }
+  }
+
+  .cart_btn {
+    display: block;
+  }
+}
+
+@include variables.desktop {
+  .cart_btn {
+    display: none;
+  }
+}
+
+@include variables.largeDesktop {
+  .cart_btn {
+    display: none;
+  }
+}

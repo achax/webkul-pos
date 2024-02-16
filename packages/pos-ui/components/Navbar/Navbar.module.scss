@@ -1,0 +1,102 @@
+@use '~/styles/_variables.scss' as variables;
+
+.navbar {
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 1s;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  height: 98%;
+
+  .user_info {
+    position: relative;
+    @include variables.flexColumn(center);
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 12px;
+
+    .img_loader {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      @include variables.skeletonLoader();
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    @include variables.flexColumn(center);
+
+    li {
+      font-size: 12px;
+      text-align: center;
+      width: 70px;
+      text-align: center;
+      padding: 10px 15px;
+      cursor: pointer;
+
+      div {
+        font-size: 21px;
+      }
+
+      span {
+        font-size: 18px;
+      }
+
+      a {
+        @include variables.flex(inherit, column);
+        margin-top: 5px;
+        color: var(--text-white-color);
+      }
+    }
+  }
+
+  ul li.non_active {
+    background-color: variables.$primary-white-color;
+    border: 2px solid variables.$primary-white-color;
+    border-radius: 8px;
+    margin: 10px;
+    color: variables.$text-hard-gray;
+  }
+
+  // ---
+  ul li.non_active:hover {
+    background-color: variables.$text-light-red;
+    border: 2px solid variables.$primary-orange-color;
+    border-radius: 8px;
+    margin: 10px;
+    color: variables.$primary-orange-color;
+    transition: all 500ms ease;
+  }
+
+  ul li.active {
+    background-color: variables.$text-light-red;
+    border: 2px solid variables.$primary-orange-color;
+    border-radius: 8px;
+    margin: 14px;
+    color: variables.$primary-orange-color;
+  }
+
+  ul li div {
+    padding: 0px;
+    padding-bottom: 4px;
+  }
+  ul a:nth-child(2) {
+    li {
+      padding: 12px 8px;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

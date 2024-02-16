@@ -1,0 +1,31 @@
+@use '~/styles/_variables.scss' as variables;
+
+.error_msg {
+  &::before {
+    margin-right: 5px;
+  }
+  color: red;
+}
+
+.error_input {
+  border-color: red !important;
+}
+
+.form_control {
+  width: 100%;
+  margin-left: 0;
+  border: 1px solid #bbb;
+  border-width: thin;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 9px;
+  border-radius: 3px;
+  box-shadow: none;
+  margin-bottom: 10px;
+  &:hover {
+    border-color: var(--primary-color);
+  }
+  &:active {
+    border-color: var(--primary-color);
+  }
+}

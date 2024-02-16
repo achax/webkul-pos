@@ -1,0 +1,83 @@
+@use '~/styles/_variables.scss' as variables;
+
+.container {
+  text-align: center;
+
+  .toggle_switch {
+    position: relative;
+    width: 75px;
+    display: inline-block;
+    text-align: left;
+    top: 8px;
+
+    .checkbox {
+      display: none;
+    }
+
+    .label {
+      display: block;
+      overflow: hidden;
+      cursor: pointer;
+      border: 0 solid variables.$text-color-light;
+      border-radius: 20px;
+
+      .inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+
+        &:before,
+        &:after {
+          float: left;
+          width: 50%;
+          height: 36px;
+          padding: 0;
+          line-height: 36px;
+          color: var(--white-color);
+          font-weight: bold;
+          box-sizing: border-box;
+        }
+
+        &:before {
+          @include variables.toggle_switch(
+            url(/assets/icons/moon.svg),
+            #060,
+            variables.$toggle-padding-left,
+            --white-color,
+            variables.$text-font-size
+          );
+        }
+        &:after {
+          @include variables.toggle_switch(
+            url(/assets/images/sun.svg),
+            variables.$text-color-light,
+            variables.$toggle-padding-right,
+            --white-color,
+            variables.$text-font-size
+          );
+          text-align: right;
+        }
+      }
+      .switch {
+        display: block;
+        width: 24px;
+        margin: 5px;
+        background: var(--white-color);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 40px;
+        border: 0 solid variables.$text-color-light;
+        border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+      }
+    }
+  }
+  .checkbox:checked + .label .inner {
+    margin-left: 0;
+  }
+  .checkbox:checked + .label .switch {
+    right: 0px;
+  }
+}

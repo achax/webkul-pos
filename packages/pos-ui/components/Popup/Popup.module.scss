@@ -1,0 +1,275 @@
+@use '~/styles/_variables.scss' as variables;
+
+/* Popup style */
+.popupbox {
+  position: fixed;
+  background: variables.$overlay;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 999;
+  left: 0;
+
+  .box {
+    position: relative;
+    width: 36%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 70vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: var(--white-color);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--gray-700);
+    overflow: auto;
+    top: 14%;
+
+    hr {
+      border: none;
+      // margin-top: -10px;
+      border-top: 10.9px solid transparent;
+      border-bottom: 0.8px solid var(--devider-gray-color);
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+    }
+
+    button {
+      font-size: 15px;
+    }
+  }
+}
+
+.discountbox {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .box {
+    position: absolute;
+    height: auto;
+    margin: calc(15vh - 20px) auto 0;
+    max-width: 480px;
+    width: 40%;
+    background: var(--white-color);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--gray-700);
+    overflow: auto;
+    bottom: 8%;
+    right: 35%;
+
+    label {
+      font-weight: 600;
+      display: block;
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    input {
+      margin-top: 10px;
+      padding: 13px;
+      width: 40%;
+    }
+
+    button {
+      font-size: 15px;
+    }
+
+    h4 {
+      margin-top: 5px;
+    }
+
+    .popup_list {
+      padding: 10px 0px;
+    }
+  }
+}
+
+.invoicebox {
+  position: fixed;
+  background: variables.$overlay;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 15;
+  left: 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 19px !important;
+      padding: 10px;
+      color: var(--text-dark-color);
+    }
+  }
+
+  .box {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 80vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: var(--white-color);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--gray-700);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    label {
+      font-weight: 500;
+      display: block;
+      font-size: 13px;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  background: variables.$overlay;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  top: 0px;
+  left: 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 19px !important;
+      padding: 10px;
+      color: var(--primary-color);
+    }
+  }
+
+  .box {
+    position: absolute;
+    width: 40%;
+    margin: 0;
+    height: 100%;
+    background: var(--white-color);
+    border-radius: 2px;
+    padding: 10px 20px;
+    border: 1px solid var(--text-gray);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    right: 0;
+    transition: transform 0.2s ease-in-out !important;
+    transition-duration: 5s;
+    transition-delay: 2s;
+    transition: width 0.9s ease-in-out;
+    animation: width_animation 0.2s alternate;
+    background-color: white;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 12px;
+
+    label {
+      font-weight: 500;
+      display: block;
+      font-size: 13px;
+    }
+
+    @keyframes width_animation {
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: 365) {
+  .box {
+    width: 60%;
+  }
+
+  @keyframes width_animation {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 60%;
+    }
+  }
+}
+
+hr .divider {
+  width: 100%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--text-gray-light);
+}
+
+.pop_box {
+  position: fixed;
+  background: variables.$overlay;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 15;
+  left: 0;
+}
+
+.category {
+  @extend .popupbox;
+
+  .box {
+    top: 4%;
+    overflow: auto;
+    height: auto;
+  }
+}
+
+.customer {
+  @extend .popupbox;
+
+  .box {
+    top: 1%;
+    max-height: 76vh;
+  }
+}
+
+.loader {
+  @extend .category;
+
+  .box {
+    text-align: center;
+  }
+}
+
+.customer_list {
+  height: 400px;
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@include variables.tablet {
+  .discountbox {
+    .box {
+      width: 65% !important;
+      position: absolute;
+      top: -20%;
+      left: 0;
+    }
+  }
+
+  .popupbox {
+    .box {
+      width: 50% !important;
+    }
+  }
+}

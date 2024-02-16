@@ -1,0 +1,48 @@
+@use '~/styles/_variables.scss' as variables;
+
+.drawer {
+  @include variables.gridBoxColumn(repeat(3, minmax(0, 1fr)));
+  column-gap: 15px;
+
+  .opening_balance,
+  .current_cash_bal,
+  .current_card_bal {
+    margin: 20px 0px;
+    padding: 15px 15px 24px 20px;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    border-radius: 8px;
+
+    .opening_drawer {
+      color: var(--primary-color);
+    }
+    span {
+      font-size: 28px;
+      color: var(--text-green-color);
+      display: inline-block;
+      margin: 0px;
+      font-weight: 700;
+    }
+  }
+}
+.tabledata,
+.order_list {
+  margin: 10px;
+}
+.tabledata h3 {
+  margin: 10px;
+}
+
+.order_list h3 {
+  margin: 22px 10px;
+}
+
+.pos_day {
+  width: 100%;
+  margin: 0px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  padding: 15px;
+  height: 40vh;
+  overflow-y: scroll;
+}

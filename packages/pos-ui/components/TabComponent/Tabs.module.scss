@@ -1,0 +1,100 @@
+@use '~/styles/_variables.scss' as variables;
+
+.link__tag {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.ease {
+  animation: 0.7s ease-out 0s 1 fadeIn;
+}
+
+.tab__list {
+  position: relative;
+  padding: 12px;
+  color: var(--text-dark-color);
+  width: 48%;
+  text-align: center;
+}
+
+.tab__list > input {
+  cursor: pointer;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  position: absolute;
+  z-index: 99;
+}
+
+.tab-content {
+  padding: 80px 20px 20px;
+  width: 100%;
+  min-height: 340px;
+}
+
+.tab-content section {
+  width: 100%;
+  display: none;
+}
+
+.tab-content section h1 {
+  margin-top: 15px;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.tab__list > label {
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 24px;
+}
+
+.tab__list > input:hover + label {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab__list > input:checked + label + .line {
+  visibility: visible;
+}
+
+.tab__list > input:checked + label,
+.tab__list > input:hover + label {
+  color: var(--primary-color);
+}
+.activeTab {
+  color: var(--primary-color);
+}
+.Activeline {
+  background: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+}
+.tabs {
+  display: flex;
+  width: 100%;
+  .line {
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    visibility: hidden;
+  }
+}
+
+.tab__content {
+  animation: 0.8s ease-out 0s 1 fadeIn;
+}
+
+@include variables.tablet {
+  .tabs {
+    font-size: 15px;
+  }
+  .tab__list > label {
+    padding: 0px;
+  }
+}

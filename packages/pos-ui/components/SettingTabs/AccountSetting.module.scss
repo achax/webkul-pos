@@ -1,0 +1,39 @@
+@use '~/styles/_variables.scss' as variables;
+
+.accountsetting {
+  padding: 20px;
+  margin-top: 10px;
+  overflow: auto;
+  background-color: var(--white-color);
+  height: 75vh;
+  border-radius: 8px;
+  box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+
+  .account_form {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--white-color);
+    // box-shadow: 0px 2px 16px rgb(34 22 22 / 8%);
+    overflow: auto;
+    form div {
+      margin-bottom: 7px;
+    }
+    button {
+      padding: 7px 13px 13px;
+      margin-top: 20px;
+      span {
+        margin-left: 5px;
+        top: 4px;
+      }
+    }
+    input {
+      font-size: 13px;
+    }
+    label {
+      font-size: 15px;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+  }
+}

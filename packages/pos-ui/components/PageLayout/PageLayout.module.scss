@@ -1,0 +1,19 @@
+@use '~/styles/_variables.scss' as variables;
+
+.layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page_layout {
+  @include variables.gridBoxColumn(100px auto);
+  width: 100vw;
+  background-color: var(--secondary-color);
+  transition: background-color 1s;
+  height: calc(100% - 67px);
+  position: relative;
+  overflow: hidden;
+}
+.header {
+  height: 65px;
+}
